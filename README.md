@@ -9,4 +9,4 @@ Makes use of PDO and MySQL
 
 Hosted by Silver Nickel Productions
 
-Author: colincronin
+Author: *colincronin*
