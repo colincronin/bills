@@ -1,6 +1,4 @@
 <?php
-#Note, please reconfigure table bills after testing
-$tablename="bills";
 # Require the Connection Credentials
 require 'con.php';
 # Open the Database Connection
@@ -11,10 +9,7 @@ catch(PDOException $e) {
     echo $e->getMessage();
 }
 # Prepare and Execute SQL Statements
-$stmt = 'CREATE TABLE IF NOT EXISTS '.$tablename.'
-    (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    handle VARCHAR(20),
-    activity VARCHAR(40))';
+$stmt = 'CREATE TABLE IF NOT EXISTS '.$tablename.'('.implode(',',$tablefields).')';
 try {
     $db->exec($stmt);
     echo "Table <b>".$tablename."</b> created<br>";
