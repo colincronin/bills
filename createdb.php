@@ -9,7 +9,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $dbname = "`".str_replace("`","``",$dbname)."`";
 $pdo->query("CREATE DATABASE IF NOT EXISTS $dbname");
 $pdo->query("use $dbname");
-echo "Using Database: <b>$dbname</b>";
+echo "Using Database: <b>$dbname</b><br>";
 
 # Close the Database Connection
 $pdo = NULL;
