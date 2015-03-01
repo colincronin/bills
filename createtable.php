@@ -4,7 +4,7 @@ require 'con.php';
 
 # Open the Database Connection
 try {
-    $db = new PDO('mysql:host=localhost;dbname='.$dbname.';charset=utf8',$dbusername, $dbpassword);
+    $db = new PDO('mysql:host='.$host.';dbname='.$dbname.';charset=utf8',$dbusername, $dbpassword);
 }
 catch(PDOException $e) {
     echo $e->getMessage();
@@ -28,5 +28,4 @@ echo "<br>";
 
 # Close the Database Connection
 $db = NULL;
-
 ?>

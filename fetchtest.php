@@ -1,29 +1,11 @@
 <?php
-# Require the Connection Credentials and Table Creation
+# Require the Connection Credentials, Global Functions, and Table Creation
 require 'con.php';
-
-# Construct the bill object
-class bill {
-    public $id;
-    public $name;
-    public $type;
-    public $date;
-    public $amount;
-    public $paid;
-
-    function describe() {
-        if($this->paid==NULL or $this->paid==0) {
-            $this->paid='NOT PAID';
-        }else{
-            $this->paid='PAID';
-        }
-        echo $this->id.' - '.$this->name.' ('.$this->type.') - '.date('F j, Y',strtotime($this->date)).' $'.$this->amount.' - '.$this->paid;
-    }
-}
+require 'functions.php';
 
 # Open the Database Connection
 try {
-    $db = new PDO('mysql:host=localhost;dbname='.$dbname.';charset=utf8',$dbusername, $dbpassword);
+    $db = new PDO('mysql:host='.$host.';dbname='.$dbname.';charset=utf8',$dbusername, $dbpassword);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     # Fetch the data into the bill class

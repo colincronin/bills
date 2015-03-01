@@ -2,7 +2,7 @@
 # Require the Connection Credentials
 require 'con.php';
 # Connect to MySQL
-$pdo = new PDO("mysql:host=localhost", $dbusername, $dbpassword);
+$pdo = new PDO("mysql:host=$host", $dbusername, $dbpassword);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 # Create the Database if it doesn't already exist
