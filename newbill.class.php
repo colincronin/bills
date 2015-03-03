@@ -43,6 +43,8 @@ class newbill {
 
             # Prepare and Execute SQL Statements
             $stmt = $db->prepare('INSERT INTO '.$tablename.' (name, type, date, amount, paid) VALUES (:name, :type, :date, :amount, :paid)');
+//            $tarray=array('name' => $this->name, 'type' => $this->type, 'date' => $this->date, 'amount' => $this->amount, 'paid' => $this->paid);
+//            $stmt->execute($tarray);
             $stmt->execute((array)$this);
         }
         catch(PDOException $e) {
